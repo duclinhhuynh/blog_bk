@@ -1,0 +1,11 @@
+class SiteControllers{
+    //[GET] / news
+    index(req, res){
+        res.render('home');
+    }
+
+    //[GET] /news/:slug
+    Search(req, res){
+        res.send('search');
+    }
+}
