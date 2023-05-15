@@ -4,8 +4,9 @@
   "description": "blog",
   "main": "src/index.js",
   "scripts": {
+    "beautiful": "lint-staged",
     "start": "nodemon --inspect src/index.js",
-    "watch":"node-sass --watch src/resources/scss/ --output src/public/css/",
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,14 +18,26 @@
   "bugs": {
     "url": "https://github.com/duclinhhuynh/blog_bk/issues"
   },
-  "homepage": "https://github.com/duclinhhuynh/blog_bk#readme",
+          "homepage": "https://github.com/duclinhhuynh/blog_bk#readme",
+   
+  "lint-staged": {
+      "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --write"
+    },
+  "husky":{
+    "hook":{
+      "pre-commit":"lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7"
   },
   "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "morgan": "^1.10.0",
     "node-sass": "^8.0.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
   }
 }
