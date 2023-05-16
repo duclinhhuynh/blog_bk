@@ -9,3 +9,5 @@ class NewControllers{
         res.send('NEWS DETAILS !!!');
     }
 }
+
+module.exports = new NewControllers;
